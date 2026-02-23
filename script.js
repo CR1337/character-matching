@@ -99,6 +99,7 @@ function generateMatching() {
         connections[i] = [...connections[i]].sort(() => Math.random() - 0.5)
     }
 
+    matching = [];
     for (let k = 0; k < matchingAmount; k++) {
         for (let i = 0; i < characters.length; i++) {
             let s = i;
