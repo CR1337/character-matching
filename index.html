@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charakter-Matching-Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Charakter-Matching-Tool</h1>
+
+        <div class="add-character">
+            <h2>Charakter hinzufügen</h2>
+            <input type="text" id="characterName" placeholder="Name" required>
+            <button onclick="addCharacter()" id="addCharacterButton">Hinzufügen</button>
+            <button onclick="clearCharacters()">Alle löschen</button>
+        </div>
+
+        <div class="character-list">
+            <h2>Hinzugefügte Charaktere</h2>
+            <ul id="characters"></ul>
+        </div>
+
+        <div class="file-actions">
+            <h2>Datei-Operationen</h2>
+            <button onclick="downloadCharacters()">Charaktere herunterladen</button>
+            <input type="file" id="fileUpload" accept=".json">
+            <button onclick="uploadCharacters()">Charaktere hochladen</button>
+        </div>
+
+        <div class="matching">
+            <h2>Matching</h2>
+            <div>
+                <label for="matchingamount">Anzahl Matchings pro Charakter:</label>
+                <input type="number" id="matchingAmount" value="1" min="1" max="8" required>
+            </div>
+            <div>
+                <button onclick="generateMatching()">Matching erzeugen</button>
+                <button onclick="matchingToClipboard()">Matching in Zwischanablage kopieren</button>
+            </div>
+            <div id="matchingResult"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
